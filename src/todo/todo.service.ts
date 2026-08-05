@@ -11,11 +11,15 @@ export class TodoService {
     const newTodo: Todo = {
       id: this.idCounter,
       title: createTodoDto.title,
-      description: createTodoDto.description,
-      completed: createTodoDto.completed,
+      description: createTodoDto.description ?? '',
+      completed: createTodoDto.completed ?? false,
     };
     this.todos.push(newTodo);
     this.idCounter++;
     return newTodo;
+  }
+
+  findAll() {
+    return this.todos;
   }
 }
