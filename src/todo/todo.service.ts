@@ -22,4 +22,8 @@ export class TodoService {
   findAll() {
     return this.todos;
   }
+
+  findOne(id: number) {
+    return this.todos.find((todo) => todo.id === id);
+  }
 }
