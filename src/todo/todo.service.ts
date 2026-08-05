@@ -31,4 +31,8 @@ export class TodoService {
     const index = this.todos.findIndex((todo) => todo.id === id);
     return (this.todos[index] = { ...this.todos[index], ...updateTodoDto });
   }
+  remove(id: number) {
+    const newTodo = this.todos.filter((todo) => todo.id !== id);
+    return (this.todos = newTodo);
+  }
 }
